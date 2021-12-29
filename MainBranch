@@ -1,0 +1,111 @@
+CREATE DATABASE bEJibun
+GO
+USE bEJibun
+
+CREATE TABLE Customer (
+    CustomerID VARCHAR(10) PRIMARY KEY CHECK(CustomerID LIKE 'CU[0-9][0-9][0-9]'),
+    CustomerName VARCHAR(200) NOT NULL,
+    CustomerGender CHAR(8) CHECK(CustomerGender = 'Male' OR 'Female') NOT NULL,
+    CustomerPhone VARCHAR(20) NOT NULL,
+    CustomerDOB DATE CHECK(CustomerDOB BETWEEN '19900101' AND '20211221') NOT NULL,
+)
+
+CREATE TABLE Vendor (
+    VendorID VARCHAR(10) PRIMARY KEY CHECK(VendorID LIKE 'VE[0-9][0-9][0-9]'),
+    VendorName VARCHAR(200) NOT NULL,
+    VendorPhone VARCHAR(20) NOT NULL,
+    VendorAddress VARCHAR(300) CHECK(VendorAddress LIKE '% Street') NOT NULL,
+    VendorEmail VARCHAR(50) CHECK(VendorEmail LIKE '%@%.com') NOT NULL,
+)
+
+CREATE TABLE Staff (
+    StaffID VARCHAR(10) PRIMARY KEY CHECK(StaffID LIKE 'ST[0-9][0-9][0-9]'),
+    StaffName VARCHAR(200) NOT NULL,
+    StaffGender CHAR(8) CHECK(StaffGender = 'Male' OR 'Female'),
+    StaffPhone VARCHAR(20) NOT NULL,
+    StaffSalary INT CHECK(StaffSalary > 0) NOT NULL,
+)
+
+CREATE TABLE Item (
+    ItemID VARCHAR(10) PRIMARY KEY CHECK(ItemID LIKE 'IT[0-9][0-9][0-9]'),
+    ItemType VARCHAR(50) NOT NULL,
+    ItemName VARCHAR(200) CHECK(ItemName >= 4) NOT NULL,
+    ItemPrice INT CHECK(ItemPrice > 0) NOT NULL,
+    MinimumQuantity INT NOT NULL,
+)
+
+CREATE TABLE Sales (
+    SalesID VARCHAR(10) PRIMARY KEY CHECK(SalesID LIKE 'SA[0-9][0-9][0-9]'),
+    StaffID VARCHAR(10) FOREIGN KEY REFERENCES(StaffID LIKE 'ST[0-9][0-9][0-9]') NOT NULL,
+    CustomerID VARCHAR(10) FOREIGN KEY REFERENCES(CustomerID LIKE 'CU[0-9][0-9][0-9]' NOT NULL,
+    SalesDate DATE NOT NULL,
+    ItemID VARCHAR(10) FOREIGN KEY REFERENCES(ItemID LIKE 'IT[0-9][0-9][0-9]') NOT NULL,
+    QuantityItem INT NOT NULL,
+)
+CREATE TABLE PurhaseTransaction (
+    TransactionID VARCHAR(10) PRIMARY KEY CHECK(TransactionID LIKE 'PH[0-9][0-9][0-9]'),
+    VendorID VARCHAR(10) FOREIGN KEY REFERENCES(VendorID LIKE 'VE[0-9][0-9][0-9]') NOT NULL,
+    PurchaseDate DATE NOT NULL,
+    VendorAddress VARCHAR(300) NOT NULL,
+    VendorName VARCHAR(200) NOT NULL,
+    ArrivalDate DATE,
+    ItemQuantity INT NOT NULL,
+)
+
+--MASTER
+INSERT INTO Customer VALUES (
+    ('CU001', 'Kyla Oktaviani', 'Female', '081289824047', 
+    ('CU002', 'Ina Agustina', 'Female', '081288915474',
+    ('CU003', 'Aditya Samosir', 'Male', '081725104115',
+    ('CU004', 'Indra Irawan', 'Male', '081224086764',
+    ('CU005', 'Lamar Maulana', 'Male', '081779343858',
+    ('CU006', 'Lukman Siregar', 'Male', '081105303791',
+    ('CU007', 'Rachel Riyanti', 'Female', '081614977900',
+    ('CU008', 'Ibrahim Suryono', 'Male', '081809113180',
+    ('CU009', 'Paris Agustina', 'Female', '081859151479',
+    ('CU010', 'Najwa Astuti', 'Female', '083183667713',
+)
+
+INSERT INTO Vendor VALUES (
+    ('VE001', 'Karunia Jaya', '081324787529', 'Tebet Street', 'karuniajaya@gmail.com')
+    ('VE002', 'Batik Biru Indah', '081335587943', 'Bukit Lawang Street', 'batikbiruindah@gmail.com')
+    ('VE003', 'Asianagro Abadi', '081375369799', 'Tangerang Street', 'asianagroabadi@gmail.com')
+    ('VE004', 'Cakrawala Mega Indah', '081390543138', 'Lembeyan Street', 'cakrawalamegaindah@gmail.com')
+    ('VE005', 'Cemerlang Abadi', '081331485227', 'Atreri Street', 'cemerlangabadi@gmail.com')
+    ('VE006', 'Bintang Utama Lestari', '081328223958', 'Mangga Dua Street', 'bintangutama@gmail.com')
+    ('VE007', 'Golden Jaya Abadi', '081305384498', 'Jembatan Lima Street', 'goldenjayaabadi@gmail.com')
+    ('VE008', 'Sinar Abadi', '081355688269', 'Jembatan Tiga Street', 'sinarabadi@gmail.com')
+    ('VE009', 'Adi Jaya', '081321712791', 'Setiabudi Street', 'adijaya@gmail.com')
+    ('VE010', 'Sumber Sukses', '081334172186', 'Cakung Street', 'sumbersukses@gmail.com')
+)
+INSERT INTO Staff VALUES (
+    ('ST001', 'Reinhart', '081417717606', '3000000')
+    ('ST002', 'Kevin', '081445585806', '2800000')
+    ('ST003', 'Gabriel', '081449210458', '4500000')
+    ('ST004', 'Jessica', '081402640786', '6000000')
+    ('ST005', 'Darren', '081494314673', '2500000')
+    ('ST006', 'Jovan', '081492318028', '5000000')
+    ('ST007', 'Jeremy', '081496126758', '8300000')
+    ('ST008', 'Putri', '081450986963', '3300000')
+    ('ST009', 'Aldrich', '081487812254', '12500000')
+    ('ST010', 'Irene', '081459311739', '7500000')
+)
+
+INSERT INTO Item VALUES (
+    ('IT001', 'Kitchenware', 'Piring', '35000','2')
+    ('IT002', 'Kitchenware', 'Gelas', '12500', '3')
+    ('IT003', 'Furniture', 'Meja', '1849000', '1')
+    ('IT004', 'Furniture', 'Kursi Makan', '899000', '1')
+    ('IT005', 'Furniture', 'Sofa', '2499000', '1')
+    ('IT006', 'Furniture', 'Rak Sepatu', '1499000', '1')
+    ('IT007', 'Furniture', 'Lemari Pakaian', '6499000', '1')
+    ('IT008', 'Electronic', 'Kulkas', '7499000', '1')
+    ('IT009', 'Electronic', 'TV', '12499000', '1')
+    ('IT010', 'Electronic', 'Microwave', '3999000', '1')
+)
+
+INSERT INTO Sales VALUES (
+)
+
+INSERT INTO PurhaseTransaction VALUES (
+)
