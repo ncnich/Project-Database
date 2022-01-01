@@ -1,0 +1,151 @@
+Project Case	 
+ISYS6169001
+Database Systems	 
+Information Systems	E202-ISYS6169-EJ05-00
+Valid on Odd Semester Year 2021/2022		Revision 00
+	
+⦁	Seluruh kelompok tidak diperkenankan untuk:
+The whole group is not allowed to:
+⦁	Melihat sebagian atau seluruh proyek kelompok lain,
+Seeing a part or the whole project from other groups
+⦁	Menyadur sebagian maupun seluruh proyek dari buku,
+Adapted a part or the whole project from the book
+⦁	Mendownload sebagian maupun seluruh proyek dari internet,
+Downloading a part or the whole project from the internet,
+⦁	Mengerjakan soal yang tidak sesuai dengan tema yang ada di soal proyek,
+Working with another theme which is not in accordance with the existing theme in the matter of the project,
+⦁	Melakukan tindakan kecurangan lainnya,
+Committing other dishonest actions,
+⦁	Secara sengaja maupun tidak sengaja melakukan segala tindakan kelalaian yang menyebabkan hasil karyanya berhasil dicontek oleh orang lain / kelompok lain.
+Accidentally or intentionally conduct any failure action that cause the results of the project was copied by someone else / other groups.
+
+⦁	Jika kelompok terbukti melakukan tindakan seperti yang dijelaskan butir 1 di atas, maka nilai kelompok yang melakukan kecurangan (menyontek maupun dicontek) akan di – NOL – kan.
+If the group is proved to the actions described in point 1 above, the score of the group which committed dishonest acts (cheating or being cheated) will be “Zero”
+
+⦁	Perhatikan jadwal pengumpulan proyek, segala jenis pengumpulan proyek di luar jadwal tidak dilayani.
+	Pay attention to the submission schedule for the project, all kinds of submission outside the project schedule will not be accepted
+
+⦁	Jangan lupa untuk melihat kriteria penilaian proyek yang ditempel di papan pengumuman, atau tanya asisten anda.
+Don’t forget to look at the project assessment criteria that posted on the announcement board, or ask your teaching assistant.
+
+⦁	Persentase penilaiaan untuk matakuliah ini adalah sebagai berikut: 
+Marking percentage for this subject is described as follows:
+
+Tugas Mandiri
+Assignment	Proyek
+Project	UAP
+Final Exam
+30%	30%	40%
+
+⦁	Software yang digunakan pada matakuliah ini adalah sebagai berikut: 
+Software will be used in this subject are described as follows: 
+
+Software
+Software
+SQL Server Management Studio 18.5.1
+SQL Server Developer 2019
+Microsoft Office 365
+Visual Paradigm Community Edition 16.1
+⦁	Ekstensi file yang harus disertakan dalam pengumpulan tugas mandiri dan proyek untuk matakuliah ini adalah sebagai berikut: 
+File extensions should be included in assignment and project collection for this subject are described as follows: 
+
+Tugas Mandiri
+Assignment	Proyek
+Project	UAP
+Final Exam
+SQL	VSDX, Image Files (JPG / PNG), SQL	SQL
+
+
+
+Soal
+Case
+
+bEJibun
+
+	bEJibun is a wholesaler store that sells various items in huge quantities. bEJibun manage sales transactions and purchase transactions.  Sales transactions is the transaction to handle items bought by customers, while purchase transactions is the transaction to handles item bought from vendors by the store’s staff to restock the store’s goods.  
+
+	In bEJibun, every customer who wants to buy items in bEJibun must be following the sales transaction procedures, which are:
+⦁	Customer that wants to buy a product must complete several personal information. Those are name, gender, phone, and date of birth (DoB). Every customer has an identification number with the following format:
+
+⦁	Every sales transaction made by the customer have several information, those are the staff who served the customer, the purchasing customer, the sales date, the item(s) purchased, and the quantity of each items. Each sales transaction has an identification number with the following format: 
+
+⦁	Customer can buy more than one item per transaction.
+⦁	Every item has several information. They are the type of the item, the item name,  price of the item (purchase price and sales price are considered the same),  minimum purchase (the minimum quantity of the item for customer to buy in a purchase) and an identification number with the following format: 
+
+
+⦁	Each item is categorized based on certain type. Every type has a name and an identification number with the following format: 
+
+⦁	Every staff has several information. Those are name, gender, phone, salary, and an identification number with the following format: 
+
+
+In bEJibun, every staff that wants to restock some items in bEJibun must be following the purchase procedures, which are:
+⦁	Every purchase transaction made by the staff has several information. Those are the staff who order the purchase, the vendor who sold the item, the purchase date (the date where the staff place the purchase order), the arrival date (the date where the items arrived), the item(s) purchased, and the quantity of each items. Each purchase transaction has an identification number with the following format: 
+
+⦁	Staff can purchase more than one item per purchase transaction.
+⦁	Each vendor has several information. Those are name, phone, address, email, and an identification number with the following format: 
+
+
+Notes:
+⦁	Customer gender can only be filled with either “Male” or “Female” value (without quote).
+⦁	Customer DoB can only be filled between 01-01-1990 and current date.
+⦁	Staff gender can only be filled with either “Male” or “Female” value (without quote).
+⦁	Staff salary can only be filled with positive, non-zero values.
+⦁	Vendor Address must be ended with ‘ Street’.
+⦁	Vendor email must be validated according to the following format:
+⦁	Must contain ‘@’ and ‘.com’
+⦁	@ must not be at the beginning
+⦁	.com must be at the end
+⦁	@ and .com must not be beside each other’s.
+⦁	Item type name’s length must be greater than or equal to 4 characters.
+⦁	Item price can only be positive, non-zero values.
+⦁	Purchase arrival date can be emptied (indicating that the purchase order has not arrived yet).
+
+Now bEJibun still using manual management system to maintain the sales transactions and purchase transactions. You as database administrator in bEJibun are asked to create a database system that can store data and maintain the sales transactions and purchase transactions. The tasks that you must do are:
+⦁	Create Entity Relationship Diagram to maintain sales transactions and purchase transactions.
+⦁	Create a database system using DDL syntax that relevant with sales transaction and purchase transaction procedures. The database system must include primary key and foreign key with suitable relationship.
+⦁	Create query using DML syntax to fill the tables in database systems with data based on the following conditions:
+⦁	Master table must be filled with more than or equals 10 data
+⦁	Transaction table must be filled with more than or equals 15 data
+⦁	Transaction detail table must be filled with more than or equals 25 data
+⦁	Create query using DML syntax to simulate the transactions process for sales and purchase transactions. 
+Note: DML syntax to fill database and DML syntax to simulate the transactions process should be a different query.
+⦁	To support database management process in bEJibun the manager of bEJibun asked you to provide some query that resulting important data. The requirements that asked from the manager are:
+⦁	Display ItemName, ItemPrice, and Item Total (obtained from the sum of purchase’s quantity) of every item from all purchase that haven’t arrived, and the Item Total of the said item is greater than 100. Display the data sorted according to the Item Total in descending order.
+
+⦁	Display VendorName, Domain Name (obtained from all letters of vendor's email, after the letter ‘@’), and Average Purchased Item (obtained from the average of the quantities of the items that have been purchased from the vendor) of every vendor whose address is on ‘Food Street’, and Domain Name is not ‘gmail.com’.
+
+⦁	Display Month (obtained from the month of sales’ date), Minimum Quantity Sold (obtained from the minimum of the sales’ quantity), and Maximum Quantity Sold (obtained from the maximum of the sales’ quantity) from every sales transaction that happens in 2019, excluding the quantity of items with the type of either ‘Food’ or ‘Drink’.
+
+⦁	Display Staff Number, (obtained from StaffID, by replacing ‘ST’ with ‘Staff ’), StaffName, Salary (obtained from the staff's salary, added by ‘Rp. ’ in front of the salary), Sales Count (obtained from the count of the sales transaction), and Average Sales Quantity (obtained from the average of the sales quantity) for each staff who serve customer of opposite gender in February.
+
+⦁	Display Customer Initial (obtained from the first letter and the last letter of the customer’s name), Transaction Date (obtained from the sales date in ‘mm dd, yyyy’ Format), and Quantity from sales transactions which are done by female customer, and the sales quantity is higher than the average quantity of all sales transaction.
+(alias subquery)
+
+⦁	Display ID (obtained from vendor’s id in lower case), VendorName, and Phone Number (obtained from vendor's phone, by replacing the first character of the vendor’s phone with ‘+62’) from every purchase transaction, where the transaction’s quantity is higher than the minimum of all purchase transaction, and the transaction’s item id is odd. The same vendor may be displayed more than once.
+(alias subquery)
+
+⦁	Display StaffName, VendorName, PurchaseID, Total Purchased Quantity (obtained from the sum of purchase quantity), Ordered Day (obtained from the difference in day between the purchase date and current date, and ends with ‘ Days ago’) for every transaction which Total Purchased Quantity is greater than the maximum quantity of all transactions that arrived less than a week after the purchase.
+(alias subquery)
+
+⦁	Display Day (obtained from the name of the day of the sales transaction, such as ‘Monday’), Item Sales Amount (obtained from the count of the item sales) from each sale, only including items which price is less than the average of the price of items with the type of either ‘Electronic’ or ‘Gadgets’. Display only the two data with the smallest sales transaction count.
+(alias subquery)
+
+⦁	Create a view called ‘Customer Statistic by Gender’ which display CustomerGender, Maximum Sales (obtained from the maximum of the sales quantity) and Minimum Sales (obtained from the minimum of the sales quantity) for every transaction with the quantity between 10 and 50 and the customer date of birth's range are between 1998 and 1999.
+
+⦁	Create a view called ‘Item Type Statistic’ to display Item Type (obtained from item type’s name in uppercase), Average Price (obtained from the average of item's price) and Number of Item Variety (obtained from the count of items) for every item type which started with F and include only the items which minimum purchase is higher than 5.
+
+
+File that must be collected:
+⦁	Entity Relationship Diagram (.vsdx, .png)
+⦁	Query to create the database system. (.sql)
+⦁	Query to insert data into tables. (.sql)
+⦁	Query to simulate the transactions processes. (.sql)
+⦁	Query to answer the 10 cases. (.sql)
+Here are the rules that you must follow to create your project:
+⦁	Use appropriate software for this subject based on Sistem Praktikum that can be downloaded from Binusmaya.
+⦁	Use the techniques taught during practicum.
+⦁	Collect appropriate files for this subject based on Sistem Praktikum that can be downloaded from Binusmaya.
+⦁	Include the other files that can support your project, such as:
+⦁	All files in your project
+⦁	Other files (image, audio, video, etc.) used in your project
+⦁	*.DOC file (documentation of your project) that contains the reference links of additional files (image, audio, video, etc.) used in your project
